@@ -10,7 +10,10 @@ class PinScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: HexColor('#ED4B27'),
       ),
-      body: Body(),
+      body: GestureDetector(
+          onTap: () {FocusScope.of(context).requestFocus(new FocusNode());},
+          child: Body()
+      ),
     );
   }
 }
@@ -18,7 +21,7 @@ class PinScreen extends StatelessWidget {
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
         SizedBox(height: 50,),
         Center(
@@ -28,7 +31,11 @@ class Body extends StatelessWidget {
               size: 120,
           ),
         ),
-        Text('নগদ পিন'),
+        Text('নগদ পিন', textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 15
+            ),
+        ),
         SizedBox(height: MediaQuery.of(context).size.height*0.05 ,),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
@@ -43,20 +50,19 @@ class Body extends StatelessWidget {
           ),
         ),
         SizedBox(height: MediaQuery.of(context).size.height*0.05 ,),
-        Padding(
+        Container(
+          decoration: BoxDecoration(
+            color: HexColor('#ED4B27'),
+            borderRadius: BorderRadius.circular(20)
+          ),
+          margin: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.08
+          ),
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.15,
           ),
           child:
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                padding: EdgeInsets.symmetric(vertical: 15),
-                side: BorderSide(
-                  width: 2.0,
-                  color: Color(0xED4B27),
-                )
-            ),
+          TextButton(
             onPressed: () => {
               Navigator.pushNamed(context, '/welcome-screen')
             },
@@ -66,7 +72,9 @@ class Body extends StatelessWidget {
                 Text(
                   'সাইন ইন',
                   style: TextStyle(
-                      color: Colors.grey
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20
                   ),
                 ),
               ],
@@ -76,6 +84,7 @@ class Body extends StatelessWidget {
         SizedBox(height: MediaQuery.of(context).size.height*0.05 ,),
         Text(
             'পিন নাম্বার ভুলে গিয়েছেন?',
+            textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.grey,
             ),

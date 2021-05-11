@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:nagad_clone/screens/ContactScreen/ContactScreen.dart';
 import 'package:nagad_clone/screens/HomeScreen/HomeScreen.dart';
 import 'package:nagad_clone/screens/PinScreen/PinScreen.dart';
+import 'package:nagad_clone/screens/ProfileScreen/ProfileScreen.dart';
 import 'package:nagad_clone/screens/SignInScreen/SignInScreen.dart';
 import 'package:nagad_clone/screens/SignUpScreen/SignUpScreen.dart';
 import 'package:nagad_clone/screens/TransactionScreen/TransactionScreen.dart';
@@ -25,6 +27,9 @@ class LoginScreen extends StatelessWidget {
         '/welcome-screen': (context) => WelcomeScreen(),
         '/home-screen': (context) => HomeScreen(),
         '/transaction-screen': (context) => TransactionScreen(),
+        '/contact-screen': (context) => ContactScreen(),
+        '/profile-screen': (context) => ProfileScreen(),
+
       },
 
     );

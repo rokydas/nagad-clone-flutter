@@ -52,20 +52,16 @@ class _BodyState extends State<Body> {
           ),
         ),
         SizedBox(height: MediaQuery.of(context).size.height*0.05 ,),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.15,
+        Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: HexColor('#ED4B27'),
+          ),
+          margin: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * 0.08,
           ),
           child:
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                padding: EdgeInsets.symmetric(vertical: 15),
-                side: BorderSide(
-                  width: 2.0,
-                  color: HexColor('#ED4B27'),
-                )
-            ),
+          TextButton(
             onPressed: () => {
               Navigator.pushNamed(context, '/pin-screen')
             },
@@ -75,7 +71,9 @@ class _BodyState extends State<Body> {
                 Text(
                   'পরবর্তী ধাপ',
                   style: TextStyle(
-                      color: Colors.grey
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold
                   ),
                 ),
               ],

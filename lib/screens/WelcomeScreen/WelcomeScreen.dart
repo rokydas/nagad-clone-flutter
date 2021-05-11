@@ -15,50 +15,52 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      child: Column(
-        // crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: ListView(
         children: [
-          SizedBox(height: MediaQuery.of(context).size.height * 0.2,),
-          Expanded(
-              flex: 4,
-              child: Image.asset('images/logo1.png'),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.15,),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 50),
+            child: Image.asset('images/logo1.png'),
           ),
-          Expanded(
-            flex: 2,
-            child: Center(child: Text('নগদ এপে স্বাগতম')),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.05,),
+          Text(
+              'নগদ এপে স্বাগতম',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 20,
+                color: HexColor('#ED4B27'),
+                fontWeight: FontWeight.bold
+              ),
           ),
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 30),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    padding: EdgeInsets.symmetric(vertical: 15),
-                    side: BorderSide(
-                      width: 2.0,
-                      color: HexColor('#ED4B27'),
-                    )
-                ),
-                onPressed: () => {
-                  Navigator.pushNamed(context, '/home-screen')
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'পরবর্তী',
-                      style: TextStyle(
-                          color: Colors.grey
-                      ),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.05,),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: HexColor('#ED4B27'),
+            ),
+            margin: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.08
+            ),
+            child: TextButton(
+              onPressed: () => {
+                Navigator.pushNamed(context, '/home-screen')
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'পরবর্তী',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
-          SizedBox(height: MediaQuery.of(context).size.height * 0.2,),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.15,),
         ],
       ),
     );

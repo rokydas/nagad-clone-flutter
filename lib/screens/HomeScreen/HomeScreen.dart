@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Body(),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (newIndex) => {
-          Navigator.pushNamed(context, '/transaction-screen')
+
+        onTap: (newIndex)  {
+          if(newIndex == 1) Navigator.pushNamed(context, '/transaction-screen');
+          if(newIndex == 2) Navigator.pushNamed(context, '/contact-screen');
+          if(newIndex == 3) Navigator.pushNamed(context, '/profile-screen');
         },
         currentIndex: 0,
         type: BottomNavigationBarType.fixed,
@@ -39,6 +47,7 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+
 class Body extends StatefulWidget {
   @override
   _BodyState createState() => _BodyState();
@@ -50,7 +59,7 @@ class _BodyState extends State<Body> {
     return ListView(
       children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.27,
+            height: 220,
             decoration: BoxDecoration(
               color: HexColor('#ED4B27')
             ),
@@ -180,12 +189,11 @@ class OptionBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.2,
+      width: MediaQuery.of(context).size.width * 0.20,
       child: Column(
         children: [
           Container(
             padding: EdgeInsets.all(7),
-
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               gradient: LinearGradient(

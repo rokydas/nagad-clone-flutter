@@ -70,20 +70,16 @@ class Body extends StatelessWidget {
           ),
         ),
         SizedBox(height: MediaQuery.of(context).size.height*0.05 ,),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.15,
+        Container(
+          decoration: BoxDecoration(
+            color: HexColor('#ED4B27'),
+            borderRadius: BorderRadius.circular(20)
+          ),
+          margin: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * 0.08,
           ),
           child:
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                padding: EdgeInsets.symmetric(vertical: 15),
-                side: BorderSide(
-                  width: 2.0,
-                  color: HexColor('#ED4B27'),
-                )
-            ),
+          TextButton(
             onPressed: () => {},
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -91,7 +87,9 @@ class Body extends StatelessWidget {
                 Text(
                   'পরবর্তী',
                   style: TextStyle(
-                      color: Colors.grey
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20
                   ),
                 ),
               ],
