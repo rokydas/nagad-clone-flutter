@@ -44,38 +44,6 @@ class _TransactionScreenState extends State<TransactionScreen> {
             ),
           ),
         ),
-          bottomNavigationBar: BottomNavigationBar(
-
-            onTap: (newIndex)  {
-              if(newIndex == 0) Navigator.pushNamed(context, '/home-screen');
-              if(newIndex == 2) Navigator.pushNamed(context, '/contact-screen');
-              if(newIndex == 3) Navigator.pushNamed(context, '/profile-screen');
-            },
-            currentIndex: 1,
-            type: BottomNavigationBarType.fixed,
-            selectedItemColor: HexColor('#ED4B27'),
-            items: [
-              BottomNavigationBarItem(
-                icon: ImageIcon(
-                  AssetImage('images/circle-logo.png'),
-                ),
-                label: 'হোম',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.list_alt_rounded),
-                label: 'লেনদেন',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.contacts_rounded),
-                label: 'কনট্যাক্টস',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.article_outlined),
-                label: 'আমার নগদ',
-              ),
-
-            ],
-          ),
         body: TabBarView(
           children: [
             ListView(
