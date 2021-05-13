@@ -19,13 +19,12 @@ class _TransactionScreenState extends State<TransactionScreen> {
           preferredSize: Size.fromHeight(MediaQuery.of(context).size.height * 0.2),
           child: AppBar(
             // backgroundColor: HexColor('#ED4B27'),
-
             flexibleSpace: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                    colors: [HexColor('#d9816d'), HexColor('#ED4B27')]
+                  colors: [HexColor('#d9816d'), HexColor('#ED4B27')]
                 )
               ),
               height: 200,
@@ -80,7 +79,7 @@ class IconText extends StatelessWidget {
 
     return Text(
       '$text',
-      style: TextStyle(fontSize: 20),
+      style: TextStyle(fontSize: 15),
     );
   }
 }

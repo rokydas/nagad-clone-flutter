@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nagad_clone/screens/ContactScreen/ContactScreen.dart';
 import 'package:nagad_clone/screens/EntryScreen/EntryScreen.dart';
-import 'package:nagad_clone/screens/HomeScreen/HomeScreen.dart';
 import 'package:nagad_clone/screens/PinScreen/PinScreen.dart';
 import 'package:nagad_clone/screens/ProfileScreen/ProfileScreen.dart';
 import 'package:nagad_clone/screens/SignInScreen/SignInScreen.dart';
