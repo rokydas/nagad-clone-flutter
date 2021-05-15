@@ -17,56 +17,74 @@ class _HomeScreenState extends State<HomeScreen> {
             decoration: BoxDecoration(
                 color: HexColor('#ED4B27')
             ),
-            child: Column(
+            child: Stack(
               children: [
-                SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-                Image.asset(
-                  'images/text.png',
-                  width: MediaQuery.of(context).size.width * 0.20,
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-                Text(
-                  'ডাক বিভাগের ডিজিটাল লেনদেন',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12
-                  ),
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                Text(
-                  'ঝংকার মাহবুব',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25
-                  ),
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.15),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white
-                  ),
-                  child: FlatButton(
-                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      onPressed: () => {},
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Image.asset(
-                            'images/circle-logo.png',
-                            width: MediaQuery.of(context).size.width * 0.08,
-                          ),
-                          Text(
-                            'ব্যালেন্স জানতে ট্যাপ করুন',
-                            style: TextStyle(
-                              color: HexColor('#ED4B27'),
-                            ),
+                Column(
+                  children: [
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+                    Image.asset(
+                      'images/text.png',
+                      width: MediaQuery.of(context).size.width * 0.20,
+                    ),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                    Text(
+                      'ডাক বিভাগের ডিজিটাল লেনদেন',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12
+                      ),
+                    ),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    Text(
+                      'ঝংকার মাহবুব',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25
+                      ),
+                    ),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.15),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white
+                      ),
+                      child: FlatButton(
+                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          onPressed: () => {},
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image.asset(
+                                'images/circle-logo.png',
+                                width: MediaQuery.of(context).size.width * 0.08,
+                              ),
+                              Text(
+                                'ব্যালেন্স জানতে ট্যাপ করুন',
+                                style: TextStyle(
+                                  color: HexColor('#ED4B27'),
+                                ),
+                              )
+                            ],
                           )
-                        ],
-                      )
+                      ),
+                    )
+                  ],
+                ),
+                Positioned(
+                  top: 10,
+                  right: 5,
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/notification-screen');
+                    },
+                    icon: Icon(
+                        Icons.notifications_none_rounded,
+                        color: Colors.white,
+                        size: 30,
+                    ),
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -127,6 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
               OptionBox('নগদ খবর'),
               OptionBox('যোগাযোগ করুন'),
               OptionBox('লিমিট ও চার্জ'),
+              Container(width: MediaQuery.of(context).size.width * 0.20,)
             ],
           ),
 
